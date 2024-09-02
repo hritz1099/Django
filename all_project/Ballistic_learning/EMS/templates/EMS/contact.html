@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>**Contact us**</title>
+</head>
+<style>
+    form{
+        background-color: rgb(176, 201, 247);
+        border:2px solid rgb(101, 150, 243);
+        border-radius: 4px;
+        width: 400px;
+        height:200px;
+        padding:50px 50px;
+        margin:auto;
+        margin-top: 50px;
+    }
+    button{
+        cursor: pointer;
+        background-color: rgb(243, 157, 174);
+        margin:8px;
+        padding:5px;
+        position: relative;
+        left:140px;
+    }
+    h1{
+        display:flex;
+justify-content: center;
+    }
+</style>
+<body>
+    <form method="post">
+        {%csrf_token%}
+        <h1>**Contact Us**</h1>
+<table>
+<tr>
+    <th>Enter your name</th>
+    <td><input type="text" name="name" value="{{n}}"></td>
+</tr>
+<tr>
+    <th>Enter your age</th>
+    <td><input type="text" name="age" value="{{a}}"></td>
+</tr>
+<tr>
+    <th>Enter your city</th>
+    <td><input type="text" name="city" value="{{c}}"></td>
+</tr>
+<tr>
+    <th>Enter your pincode</th>
+    <td><input type="text" name="pin" value="{{s}}"></td>
+</tr>
+<tr>
+    <th><button value="submit" name="btnsubmit">click</button></th>
+</tr>
+</table>
+
+</form>
+</body>
+</html>

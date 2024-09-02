@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+</head>
+<body>
+    <form method="post">
+        {%csrf_token%}
+        <h1>***Contact Us***</h1>
+        <table>
+            <tr>
+                <th>Enter your Name :</th>
+                <th><input type="text" name="name" value="{{n}}"></th>
+            </tr>
+            <tr>
+                <th>Enter your Age :</th>
+                <th><input type="text" name="age" value="{{a}}"></th>
+            </tr>
+            <tr>
+                <th>Enter your Contact no:</th>
+                <th><input type="text" name="num" value="{{c}}"></th>
+            </tr>
+            <tr>
+                <th>Your feedback :</th>
+                <th><textarea name="feed">{{f}}</textarea></th> <!-- Corrected here -->
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit" name="send">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
