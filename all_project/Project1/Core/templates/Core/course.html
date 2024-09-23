@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Detail</title>
+</head>
+<body>
+   <form method="post">
+    {% csrf_token %}
+    <h2>****Student Course Detail****</h2>
+    Select Course :-
+    <select name="cid" >
+        {%for course in courses%}
+        <option value="{{course.id}}">{{course.name}}</option>
+
+        {% endfor%}
+
+
+    </select>
+    <button type="submit">Get Course Detail</button>
+<br><br>
+<table border="2">
+   <tr>
+        <th>S.no</th>
+        <th>Student Name</th>
+        <th>Mobile No</th>
+        <th>Selected Course</th>
+    </tr>
+    {% for stu in students %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+        <td>{{stu.name}}</td>
+        <td>{{stu.mobileNo}}</td>
+        <td>{{stu.course}}</td> 
+    </tr>
+    {% empty %}
+    <tr >
+        <th colspan="4">
+            <h3>No student Enrolled</h3>
+        </th>
+  {% endfor %}
+</table>
+
+
+</form> 
+</body>
+</html>

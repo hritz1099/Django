@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTL</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+    <h1>Show Dummy Employee</h1>
+    Enter No of Employee:
+    <input type="text" name="txtfield">
+    <button name="btn">Show Employee</button>
+   <table bgcolor="yellow" border="3">
+<tr>
+    <th> S.no</th>
+    <th name="name">Name</th>
+    <th name="age">age</th>
+    <th name="city">city</th>
+    <th name="sal">salary</th>
+   </tr>
+   {% for emp in employee %}
+   <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{emp.name}}</td>
+    <td>{{emp.age}}</td>
+    <td>{{emp.city}}</td>
+    <td>{{emp.salary}}</td>
+
+</tr>
+<tr>
+   {% empty %}
+   <td colspan="6"><h1 style="color:red">No Employee Found!</h1></td>
+</tr>
+{% endfor %}
+</table>
+</form>
+ {% comment %} {% if a < b and a < c %}
+        <h1>{{a}} is less than {{b}} and {{c}}</h1>
+    {% elif b < a and b < c%}
+        <h1>{{b}} is less than {{a}} and {{c}}</h1>
+    {%else%}
+        <h1>{{c}} is less than {{a}} and {{b}}</h1>
+    {% endif %} {% endcomment %}
+
+
+
+
+
+</body>
+</html>

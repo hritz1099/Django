@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- by default in form tag "GET"is the default method  -->
+   <form method="post">
+    {%csrf_token%}
+    <!-- {{a}},{{b}},{{res}} -->
+    <h1>****WELCOME TO CALCULATOR PROGRAM****</h1>
+    
+
+    <table border="3" bgcolor="yellow">
+    <tr>
+        <th>ENTER YOUR FIRST NO</th>
+        <th><input type="text" name="txt1" id="" value="{{a}}"></th>
+    </tr>
+    <tr>
+        <th>ENTER YOUR SECOND NO</th>
+        <th><input type="text" name="txt2" id="" value="{{b}}"></th>
+    </tr>
+    <tr>
+        <th>RESULT</th>
+        <th><input type="text" name="res" id="" value="{{res}}"></th>
+    </tr>
+    <tr>
+        
+        <th><button type="submit" name="btnsum">+</button></th>
+        <th><button type="submit" name="btnsub">-</button></th>
+        <th><button type="submit" name="btnmulti">*</button></th>
+        <th><button type="submit" name="btndiv">/</button></th>
+       
+    </tr>
+    
+</table>
+</form>
+
+
+</body>
+</html>
