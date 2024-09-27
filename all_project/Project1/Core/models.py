@@ -1,4 +1,7 @@
 from django.db import models
+from Core.models import *
+# from .forms import *
+from django.shortcuts import render
 
 # Create your models here.
 class Student(models.Model):
@@ -25,3 +28,6 @@ class PaymentDetails(models.Model):
     payment_date=models.DateTimeField(auto_now=True)
     # {s should be small }student=models.ForeignKey(Student,null=False,blank=False)
     student=models.ForeignKey(Student,null=False,blank=False,on_delete=models.CASCADE,default=1)
+
+
+
